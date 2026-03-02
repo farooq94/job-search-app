@@ -1,0 +1,9 @@
+node_modules
+dist
+.env
+.git
+.claude
+*.md
+Dockerfile
+.dockerignore
+debug-scraper.ts

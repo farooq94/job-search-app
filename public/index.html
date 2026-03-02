@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Search</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Job Search</h1>
+      <p class="subtitle">Aggregating real listings from multiple sources</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <form id="search-form" class="search-form">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="keyword">Keyword</label>
+          <input type="text" id="keyword" placeholder="e.g. React, Marketing...">
+        </div>
+
+        <div class="form-group">
+          <label for="position">Position</label>
+          <select id="position"></select>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <select id="location"></select>
+        </div>
+
+        <div class="form-group">
+          <label for="job-type">Job Type</label>
+          <select id="job-type"></select>
+        </div>
+
+        <div class="form-group">
+          <label for="salary-range">Salary Range</label>
+          <select id="salary-range"></select>
+        </div>
+
+        <div class="form-group">
+          <label for="results-per-page">Results Per Page</label>
+          <select id="results-per-page">
+            <option value="10">10</option>
+            <option value="20" selected>20</option>
+            <option value="50">50</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label class="checkbox-label">
+          <input type="checkbox" id="remote-only">
+          <span>Remote Only</span>
+        </label>
+      </div>
+
+      <div class="form-group sources-group">
+        <label>Sources</label>
+        <div id="sources-checkboxes" class="sources-checkboxes"></div>
+      </div>
+
+      <button type="submit" id="search-btn" class="btn-search">Search Jobs</button>
+    </form>
+
+    <div id="source-status" class="source-status" style="display:none;"></div>
+
+    <div id="results-info" class="results-info" style="display:none;"></div>
+
+    <div id="loading" class="loading" style="display:none;">
+      <div class="spinner"></div>
+      <p>Searching across job boards...</p>
+    </div>
+
+    <div id="no-results" class="no-results" style="display:none;">
+      <p>No jobs found. Try different search terms or filters.</p>
+    </div>
+
+    <div id="error-message" class="error-message" style="display:none;"></div>
+
+    <div id="job-results" class="job-results"></div>
+
+    <div id="pagination" class="pagination" style="display:none;"></div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Data from The Muse, RemoteOK, Adzuna, and JSearch</p>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
