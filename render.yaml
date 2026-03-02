@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: job-search-app
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: CACHE_TTL_SECONDS
+        value: 300
+      - key: PUPPETEER_EXECUTABLE_PATH
+        value: /usr/bin/chromium
